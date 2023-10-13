@@ -1,8 +1,32 @@
 ///
 const cardArray = [
   {
-    name: "alakazam",
-    img: "images/alakazam.png",
+    name: "charizard",
+    img: "images/charizard.png",
+  },
+  {
+    name: "dragonite",
+    img: "images/draonite-5.png",
+  },
+  {
+    name: "venasaur",
+    img: "images/venasaur.png",
+  },
+  {
+    name: "pickachu",
+    img: "images/pickachu.png",
+  },
+  {
+    name: "machamp",
+    img: "images/machamp.png",
+  },
+  {
+    name: "snorlax",
+    img: "images/snorlax.png",
+  },
+  {
+    name: "mew",
+    img: "images/mew.png",
   },
   {
     name: "charizard",
@@ -10,43 +34,27 @@ const cardArray = [
   },
   {
     name: "dragonite",
-    img: "images/dragonite.png",
+    img: "images/draonite-5.png",
   },
   {
-    name: "electribuzz",
-    img: "images/electribuzz.png",
-  },
-  {
-    name: "machamp",
-    img: "images/mew2.png",
+    name: "venasaur",
+    img: "images/venasaur.png",
   },
   {
     name: "pickachu",
     img: "images/pickachu.png",
   },
   {
-    name: "alakazam",
-    img: "images/alakazam.png",
-  },
-  {
-    name: "charizard",
-    img: "images/charizard.png",
-  },
-  {
-    name: "dragonite",
-    img: "images/dragonite.png",
-  },
-  {
-    name: "electribuzz",
-    img: "images/electribuzz.png",
-  },
-  {
     name: "machamp",
-    img: "images/mew2.png",
+    img: "images/machamp.png",
   },
   {
-    name: "pickachu",
-    img: "images/pickachu.png",
+    name: "snorlax",
+    img: "images/snorlax.png",
+  },
+  {
+    name: "mew",
+    img: "images/mew.png",
   },
 ];
 
@@ -77,11 +85,11 @@ function checkMatch() {
   if (optionOneId == optionTwoId) {
     cards[optionOneId].setAttribute("src", "images/pokemon.png");
     cards[optionTwoId].setAttribute("src", "images/pokemon.png");
-    alert("clicked same image");
+    alert("Clicked same card try a different card");
   }
 
   if (cardsChosen[0] == cardsChosen[1]) {
-    alert("match");
+    alert("You are amazing! Found a match!");
     cards[optionOneId].setAttribute("src", "images/blank-1.png");
     cards[optionTwoId].setAttribute("src", "images/blank-1.png");
     cards[optionOneId].removeEventListener("click", flipCard);
@@ -90,14 +98,15 @@ function checkMatch() {
   } else {
     cards[optionOneId].setAttribute("src", "images/pokemon.png");
     cards[optionTwoId].setAttribute("src", "images/pokemon.png");
-    alert("try again");
+    alert("Sorry, not a match. Please try again");
   }
   resultDisplay.innerHTML = cardsWon.length;
   cardsChosen = [];
   cardsChosenIds = [];
 
   if (cardsWon.length == cardArray.length / 2) {
-    resultDisplay.innerHTML = "congratulation, you found them all";
+    resultDisplay.innerHTML =
+      "Congratulations, you found them all Pokemon Master!";
   }
 }
 
